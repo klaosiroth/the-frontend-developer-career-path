@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Modal</title>
+  <link rel="stylesheet" href="box-model.css">
+</head>
+<body>
+  <main>
+    <h1>The CSS Box Model</h1>
+    <p>We can declare widths and heights on elements to define their size. We also have other properties like margins, padding, and borders which make up the box model.</p>
+
+    <div id="box-modal" class="box-model">
+      <div id="margin" class="margin">margin</div>
+      <div id="border" class="border">border</div>
+      <div id="padding" class="padding">padding</div>
+      <div id="content" class="content">content</div>
+    </div>
+
+    <section id="margin" class="bg-dark">
+      <h2>Margin</h2>
+      <p>Margin is used to control the space around an element.</p>
+    </section>
+
+    <section id="padding" class="bg-light">
+      <h2>Padding</h2>
+      <p>Padding is a lot like margin, except that it adds the empty space <em>inside</em> the element, which includes it's background-color.</p>
+    </section>
+  
+    <section id="border"  class="bg-dark">
+      <h2>Borders</h2>
+      <p>Borders are a line that surrounds an element, similar to a stroke if you are familiar with design software.</p>
+    </section>
+  </main>
+</body>
+</html>
