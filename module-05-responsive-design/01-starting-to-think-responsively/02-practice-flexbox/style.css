@@ -1,0 +1,126 @@
+:root {
+  --clr-darkblue: #143774;
+  --clr-lightblue: #1792D2;
+  --clr-gray-700: #717171;
+  --clr-gray-500: #707070;
+  --clr-gray-300: #EBEBEB;
+  --clr-gray-100: #F8F8F8;
+  --clr-white: #FFFFFF;
+  
+  --ff-lora: 'lora', serif;
+  --ff-ubuntu: 'Ubuntu', sans-serif;
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-body: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-ubuntu);
+  font-size: var(--fs-body);
+  color: var(--clr-gray);
+}
+
+/* Typography */
+
+h1, h2 {
+  font-family: var(--ff-lora);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+/* Layout */
+
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+
+.site-header {
+  background: var(--clr-gray-100);
+  padding: 3em 0;
+}
+
+.site-title .title, .site-title .subtitle {
+  margin: 0;
+}
+
+.title {
+  color: var(--clr-darkblue);
+}
+
+.subtitle {
+  color: var(--clr-lightblue);
+  font-family: var(--ff-ubuntu);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-link {
+  color: var(--clr-gray-700);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: .75em 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--clr-lightblue);
+}
+
+.current-page {
+  color: var(--clr-gray-700);
+  text-decoration: 2px underline;
+  text-underline-offset: 0.5em;
+}
+
+@media (max-width: 48em) {
+  .site-header {
+    text-align: center;
+  }
+}
+
+@media (min-width: 48em) {
+  .site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-navigation {
+    margin-left: auto;
+  }
+
+  .nav-list {
+    display: flex;
+  }
+  
+  .nav-list-item {
+    margin-left: 2em;
+  }
+}
