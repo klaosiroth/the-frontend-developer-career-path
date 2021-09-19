@@ -35,7 +35,7 @@ img {
 
 /* Typography */
 
-h1, h2 {
+h1, h2, h3 {
   color: var(--clr-darkblue);
   font-family: var(--ff-lora);
   font-weight: 400;
@@ -47,6 +47,10 @@ h1 {
 
 h2 {
   font-size: var(--fs-h2);
+}
+
+h3 {
+  color: var(--clr-lightblue);
 }
 
 a {
@@ -73,12 +77,10 @@ a:focus {
   }
 
   main {
-    /* flex: 3; */
     flex: 0 1 75%;
   }
 
   aside {
-    /* flex: 1; */
     flex: 0 1 25%;
   }
 }
@@ -267,4 +269,20 @@ a:focus {
 .site-footer p {
   opacity: 54%;
   margin: 0;
+}
+
+/* about-me */
+
+.about-me {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 62em) {
+  .about-me {
+    margin-bottom: 6rem;
+  }
+}
+
+.about-me-image {
+  margin-bottom: 2em;
 }
