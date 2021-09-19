@@ -11,7 +11,7 @@
   --ff-ubuntu: 'Ubuntu', sans-serif;
   --fs-h1: 2rem;
   --fs-h2: 1.5rem;
-  --fs-body: 1rem;
+  --fs-body: 1.125rem;
 }
 
 * {
@@ -22,12 +22,21 @@ body {
   margin: 0;
   font-family: var(--ff-ubuntu);
   font-size: var(--fs-body);
-  color: var(--clr-gray);
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--clr-gray-500);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Typography */
 
 h1, h2 {
+  color: var(--clr-darkblue);
   font-family: var(--ff-lora);
   font-weight: 400;
 }
@@ -40,6 +49,15 @@ h2 {
   font-size: var(--fs-h2);
 }
 
+a {
+  color: var(--clr-lightblue);
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-darkblue);
+}
+
 /* Layout */
 
 .container {
@@ -48,19 +66,33 @@ h2 {
   margin: 0 auto;
 }
 
-/* Navigation */
+@media (min-width: 62em) {
+  .flex-container {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  main {
+    /* flex: 3; */
+    flex: 0 1 75%;
+  }
+
+  aside {
+    /* flex: 1; */
+    flex: 0 1 25%;
+  }
+}
+
+/* navigation */
 
 .site-header {
   background: var(--clr-gray-100);
   padding: 3em 0;
+  margin-bottom: 3em;
 }
 
 .site-title .title, .site-title .subtitle {
   margin: 0;
-}
-
-.title {
-  color: var(--clr-darkblue);
 }
 
 .subtitle {
@@ -98,13 +130,13 @@ h2 {
   text-underline-offset: 0.5em;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 62em) {
   .site-header {
     text-align: center;
   }
 }
 
-@media (min-width: 48em) {
+@media (min-width: 62em) {
   .site-header .container {
     display: flex;
     flex-wrap: wrap;
@@ -123,4 +155,116 @@ h2 {
   .nav-list-item {
     margin-left: 2em;
   }
+}
+
+/* article */
+
+.article-featured {
+  border-bottom: 1px solid var(--clr-gray-500);
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.article-image {
+  margin-bottom: 2em;
+}
+
+.article-info, .article-read-more {
+  font-size: 0.875rem;
+}
+
+.article-read-more {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+  color: var(--clr-darkblue);
+  text-decoration: underline;
+}
+
+.article-recent {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 62em) {
+  .article-recent {
+    display: flex;
+    column-gap: 1rem;
+  }
+
+  .article-recent-main {
+    flex: 0 1 30%;
+  }
+
+  .article-recent-secondary {
+    flex: 0 1 70%;
+  }
+
+  .article-image {
+    min-height: 240px;
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+
+  .article-image--left {
+    object-position: left;
+  }
+
+  .article-title {
+    margin-top: 0;
+  }
+}
+
+/* widget */
+
+.sidebar-widget {
+  border: 1em solid var(--clr-gray-300);
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.widget-title {
+  font-family: var(--ff-ubuntu);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0 0 1em 0;
+}
+
+.widget-body {
+  font-size: 0.875rem;
+}
+
+.recent-post {
+  border-bottom: 1px solid var(--clr-gray-500);
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.recent-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.recent-post-title {
+  color: var(--clr-darkblue);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+/* footer */
+
+.site-footer {
+  background:var(--clr-darkblue);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 3.75rem 0;
+}
+
+.site-footer p {
+  opacity: 54%;
+  margin: 0;
 }
