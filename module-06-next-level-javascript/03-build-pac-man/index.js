@@ -66,4 +66,56 @@ function createBoard() {
 
 createBoard()
 
-console.log(squares);
+// starting position of pacman
+let pacmanCurrentIndex = 490
+squares[pacmanCurrentIndex].classList.add('pacman')
+
+function control(event) {
+  squares[pacmanCurrentIndex].classList.remove('pacman')
+
+  switch(event.key) {
+    case "ArrowDown":
+    console.log('pressed down')
+    if 
+      (
+        pacmanCurrentIndex + width < width * width
+      )
+      pacmanCurrentIndex += width
+    break
+
+    case "ArrowUp":
+    console.log('pressed up')
+    if 
+      (
+        pacmanCurrentIndex - width >=0
+      )
+      pacmanCurrentIndex -= width
+    break
+
+    case "ArrowLeft":
+    console.log('pressed left')
+    if 
+      (
+        pacmanCurrentIndex % width !== 0
+      )
+      pacmanCurrentIndex -=1
+    break
+
+    case "ArrowRight":
+    console.log('pressed right')
+    if
+      (
+        pacmanCurrentIndex % width < width -1
+      )
+      pacmanCurrentIndex +=1
+    break
+    
+    default:
+      // quit when this doesn't handle the key event.
+      return
+  }
+
+  squares[pacmanCurrentIndex].classList.add('pacman')
+}
+
+document.addEventListener('keyup', control)
