@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap');
+
+:root {
+  --clr-primary: #f18119;
+  --clr-text: #404040;
+  --clr-white: #fff;
+  --clr-gradient: linear-gradient(90deg, #ffa51d , #ff713b);
+
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --fs-h1: 2.25rem;
+  --fs-h2: 1.3125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.625rem;
+  --fw-bold: 900;
+  --fw-regular: 400
+}
+
+@media (min-width: 48em) {
+  :root {
+    --fs-h1: 3.5rem;
+    --fs-h2: 1.75rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-text);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-regular);
+  color: var(--clr-white);
+  margin: 2em 0;
+}
+
+h1 + p {
+  color: var(--clr-primary);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  margin: 0;
+}
+
+h2 + p {
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+small {
+  font-size: var(--fs-small);
+}
+
+main {
+  text-align: center;
+}
+
+.intro > *,
+.content > * {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro {
+  background-color: var(--clr-text);
+  background-image: url(images/dark-ribs.jpg);
+  background-position: center;
+  background-size: cover;
+
+  position: relative;
+  padding: 2em;
+}
+
+.intro span {
+  color: var(--clr-primary);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-top: 8px solid var(--clr-primary);
+  border-image: var(--clr-gradient) 1;
+  padding-top: 0.2em;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  padding: 2em 1em;
+}
+
+.form-control {
+  width: 90%;
+  max-width: 320px;
+}
+
+input, button {
+  width: 100%;
+  border-radius: 4px;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  padding: 0.25em;
+  margin-bottom: .75em;
+  border: 1px solid var(--clr-text);
+}
+
+button {
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 0 solid transparent;
+  cursor: pointer;
+
+  background: var(--clr-gradient);
+  color: var(--clr-white);
+  transition: all 100ms ease-out;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* media queries  */
+
+@media (min-width: 62em) {
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    min-height: 100vh;
+  }
+
+  .intro, .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
