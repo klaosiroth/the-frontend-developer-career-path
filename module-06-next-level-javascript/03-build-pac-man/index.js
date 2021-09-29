@@ -44,6 +44,7 @@ const layout = [
 // create board
 function createBoard() {
   for (let i = 0; i < layout.length; i++) {
+
     // create a square
     const square = document.createElement('div')
 
@@ -92,7 +93,7 @@ function control(event) {
       (
         !squares[pacmanCurrentIndex - width].classList.contains('ghost-lair') &&
         !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
-        pacmanCurrentIndex - width >=0
+        pacmanCurrentIndex - width >= 0
       )
       pacmanCurrentIndex -= width
     break
@@ -102,10 +103,10 @@ function control(event) {
     if 
       (
         !squares[pacmanCurrentIndex - 1].classList.contains('ghost-lair') &&
-        !squares[pacmanCurrentIndex -1].classList.contains('wall') &&
+        !squares[pacmanCurrentIndex - 1].classList.contains('wall') &&
         pacmanCurrentIndex % width !== 0
       )
-      pacmanCurrentIndex -=1
+      pacmanCurrentIndex -= 1
       if (pacmanCurrentIndex === 364) {
         pacmanCurrentIndex = 391
       }
@@ -116,10 +117,10 @@ function control(event) {
     if
       (
         !squares[pacmanCurrentIndex + 1].classList.contains('ghost-lair') &&
-        !squares[pacmanCurrentIndex +1].classList.contains('wall') &&
-        pacmanCurrentIndex % width < width -1
+        !squares[pacmanCurrentIndex + 1].classList.contains('wall') &&
+        pacmanCurrentIndex % width < width - 1
       )
-      pacmanCurrentIndex +=1
+      pacmanCurrentIndex += 1
       if (pacmanCurrentIndex === 391) {
         pacmanCurrentIndex = 364
       }
