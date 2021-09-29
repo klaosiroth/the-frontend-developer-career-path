@@ -240,5 +240,26 @@ function moveGhost(ghost) {
       squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
     }
 
+    checkForGameOver()
   }, ghost.speed)
+}
+
+// check for game over
+function checkForGameOver() {
+
+  // if the square pacman is in contains a ghost AND the square does NOT contain a scared ghost
+  if (
+    squares[pacmanCurrentIndex].classList.contains('ghost') &&
+    !squares[pacmanCurrentIndex].classList.contains('scared-ghost')
+  ) {
+
+    // for each ghost - we need to stop it moving
+    ghosts.forEach(ghost => clearInterval(ghost.timerId))
+
+    // remove evenlistener from our control function
+    document.removeEventListener('keyup', control)
+
+    // tell user the game is over
+    scoreDisplay.innerHTML = 'YOU LOSE'
+  }
 }
