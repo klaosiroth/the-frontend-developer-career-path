@@ -143,3 +143,23 @@ function pacDotEaten() {
     scoreDisplay.innerHTML = score
   }
 }
+
+class Ghost {
+  constructor(className, startIndex, speed) {
+    this.className = className
+    this.startIndex = startIndex
+    this.speed = speed
+  }
+}
+
+const ghosts = [
+  new Ghost('blinky', 348, 250),
+  new Ghost('pinky', 376, 400),
+  new Ghost('inky', 351, 300),
+  new Ghost('clyde', 379, 500),
+]
+
+// draw my ghosts onto my grid
+ghosts.forEach(ghost => {
+  squares[ghost.startIndex].classList.add(ghost.className)
+})
