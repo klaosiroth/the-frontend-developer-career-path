@@ -78,6 +78,7 @@ function control(event) {
     console.log('pressed down')
     if 
       (
+        !squares[pacmanCurrentIndex + width].classList.contains('ghost-lair') &&
         !squares[pacmanCurrentIndex + width].classList.contains('wall') &&
         pacmanCurrentIndex + width < width * width
       )
@@ -88,6 +89,7 @@ function control(event) {
     console.log('pressed up')
     if 
       (
+        !squares[pacmanCurrentIndex - width].classList.contains('ghost-lair') &&
         !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
         pacmanCurrentIndex - width >=0
       )
@@ -98,6 +100,7 @@ function control(event) {
     console.log('pressed left')
     if 
       (
+        !squares[pacmanCurrentIndex - 1].classList.contains('ghost-lair') &&
         !squares[pacmanCurrentIndex -1].classList.contains('wall') &&
         pacmanCurrentIndex % width !== 0
       )
@@ -108,6 +111,7 @@ function control(event) {
     console.log('pressed right')
     if
       (
+        !squares[pacmanCurrentIndex + 1].classList.contains('ghost-lair') &&
         !squares[pacmanCurrentIndex +1].classList.contains('wall') &&
         pacmanCurrentIndex % width < width -1
       )
