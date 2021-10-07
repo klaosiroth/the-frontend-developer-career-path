@@ -1,14 +1,19 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
+import { CartContext } from '../context/CartProvider'
 import logo from '../logo.svg'
 
 function Header() {
+  const { cart } = useContext(CartContext)
+  const cartClassName = cart.length > 0 ? "ri-shopping-cart-fill" : "ri-shopping-cart-line"
+
   return (
     <Head>
       <StyledLink to="/" style={{display: 'inline-block'}}><Image src={logo} alt="logo" /></StyledLink>
       <nav>
         <ul>
-          <li><StyledLink to="/cart">cart</StyledLink></li>
+          <li><StyledLink to="/cart"><i className={`${cartClassName} ri-fw ri-2x`}></i></StyledLink></li>
         </ul>
       </nav>
     </Head>
